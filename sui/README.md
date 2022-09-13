@@ -183,7 +183,7 @@ wget -qO update.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/s
 
 Update sui version with database cleanup
 ```
-wget -qO update_db_cleanup.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/sui/tools/update_db_cleanup.sh && chmod +x update_db_cleanup.sh && ./update_db_cleanup.sh
+wget -qO update_db_cleanup.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/sui/tools/update_db_cleanup.sh && chmod +x update_db_cleanup.sh && ./update_db_cleanup.sh
 ```
 
 ## Recover your keys
