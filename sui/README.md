@@ -178,7 +178,7 @@ sui --version
 
 Update sui version
 ```
-wget -qO update.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/sui/tools/update.sh && chmod +x update.sh && ./update.sh
+wget -qO update.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/sui/tools/update.sh && chmod +x update.sh && ./update.sh
 ```
 
 Update sui version with database cleanup
