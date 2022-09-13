@@ -99,11 +99,7 @@ sui client active-address
 !faucet <YOUR_WALLET_ADDRESS>
 ```
 
-![image](https://user-images.githubusercontent.com/50621007/180215182-cbb7fc6c-aba3-4834-ad05-f79e1c26b40c.png)
-
 3. Wait until bot sends tokens to your wallet
-
-![image](https://user-images.githubusercontent.com/50621007/180222321-1dc5323b-1174-41c8-b632-6ac2ce639ce1.png)
 
 4. You can check your balance at `https://explorer.devnet.sui.io/addresses/<YOUR_WALLET_ADDRESS>`
 
