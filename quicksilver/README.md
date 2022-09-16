@@ -7,13 +7,6 @@ Official documentation:
 Explorer:
 >-  https://quicksilver.explorers.guru/
 
-## Usefull tools and references
-> To generate gentx for killerqueen-1 testnet please navigate to [Generate gentx for killerqueen-1 testnet](https://github.com/kj89/testnet_manuals/blob/main/quicksilver/gentx/README.md)
->
-> To set up monitoring for your validator node navigate to [Set up monitoring and alerting for quicksilver validator](https://github.com/kj89/testnet_manuals/blob/main/quicksilver/monitoring/README.md)
->
-> To migrate your validator to another machine read [Migrate your validator to another machine](https://github.com/kj89/testnet_manuals/blob/main/quicksilver/migrate_validator.md)
-
 ## Hardware Requirements
 Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
 
@@ -33,7 +26,7 @@ Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
 ### Option 1 (automatic)
 You can setup your quicksilver fullnode in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
-wget -O quicksilver.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/quicksilver/quicksilver.sh && chmod +x quicksilver.sh && ./quicksilver.sh
+wget -O quicksilver.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/quicksilver/quicksilver.sh && chmod +x quicksilver.sh && ./quicksilver.sh
 ```
 
 ### Option 2 (manual)
