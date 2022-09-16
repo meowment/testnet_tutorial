@@ -11,9 +11,6 @@ Official documentation:
 Explorer:
 >-  https://stride.explorers.guru
 
-## Hardware Requirements
-Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
-
 ### Minimum Hardware Requirements
  - 4x CPUs; the faster clock speed the better
  - 8GB RAM
