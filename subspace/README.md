@@ -1,3 +1,6 @@
+<p align="center">
+  <img height="100" height="auto" src="https://user-images.githubusercontent.com/50621007/171398816-7e0432f4-4d39-42ad-a72e-cd8dd008028f.png">
+</p>
 
 # Subspace node setup for Gemini 2 Incentivized Testnet
 
