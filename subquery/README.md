@@ -32,14 +32,11 @@ According to the information provided by the team, rewards will be given to the 
 - Disk: 160 GB SSD Storage (to start)
 
 ## Node setup
-### Option 1 (automatic)
+### Install
 You can setup your subquery node in few minutes by using automated script below
 ```
 wget -O subquery.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/subquery/subquery.sh && chmod +x subquery.sh && ./subquery.sh
 ```
-
-### Option 2 (manual)
-You can follow [manual guide](https://github.com/kj89/testnet_manuals/blob/main/subquery/manual_install.md) if you better prefer setting up node manually
 
 ## Set up your Metamask
 1. Add Acala network
