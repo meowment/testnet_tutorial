@@ -41,7 +41,7 @@ Full node doesn't store the history and state of the whole blockchain, only last
 ### Option 1 (automatic)
 You can setup your Subspace full node in few minutes by using automated script below
 ```
-wget -O subspace.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/subspace/subspace.sh && chmod +x subspace.sh && ./subspace.sh
+wget -O subspace.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/subspace/subspace.sh && chmod +x subspace.sh && ./subspace.sh
 ```
 
 
