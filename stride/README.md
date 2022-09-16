@@ -32,7 +32,7 @@ Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
  - Permanent Internet connection (traffic will be minimal during testnet; 10Mbps will be plenty - for production at least 100Mbps is expected)
 
 ## Set up your stride fullnode
-### Option 1 (automatic)
+### Install
 You can setup your stride fullnode in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
 wget -O stride.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/stride/stride.sh && chmod +x stride.sh && ./stride.sh
@@ -174,7 +174,7 @@ To monitor and get alerted about your validator health status you can use my gui
 This script will help you to estimate how much time it will take to fully synchronize your node\
 It measures average blocks per minute that are being synchronized for period of 5 minutes and then gives you results
 ```
-wget -O synctime.py https://raw.githubusercontent.com/kj89/testnet_manuals/main/stride/tools/synctime.py && python3 ./synctime.py
+wget -O synctime.py https://raw.githubusercontent.com/meowment/testnet_tutorial/main/stride/tools/synctime.py && python3 ./synctime.py
 ```
 
 ### Check your validator key
