@@ -11,8 +11,6 @@ Official documentation:
 - Discord: https://discord.gg/KefTcqQq
 - Frontier Testnet Mission list: https://frontier.subquery.network/missions/my-missions
 
-Frontier tasks:
-- Instructions for the Frontier Testnet tasks can be found [here](https://github.com/kj89/testnet_manuals/blob/main/subquery/tasks/README.md)
 
 ## Project information
 
