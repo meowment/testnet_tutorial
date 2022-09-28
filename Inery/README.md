@@ -10,12 +10,6 @@ Explorer:
 
 >- To monitor and get alerted about your validator health status you can use my guide on [Set up monitoring and alerting for inery validator](https://github.com/nodesxploit/testnet/blob/main/inery/monitoring/README.md)
 
-### =================================
-Special thanks to my fren Pramono Utomo A.K.A NakedCat for provide this tutorial on publish0x! I just copy and modified :)
-
-Inery Task 1 by Pramono Utomo : https://www.youtube.com/watch?v=pXIS5ekP2uU
-Support by Subscirbe on Youtube Channel : https://youtube.com/c/pramonoutomo
-### =================================
 
 ## Hardware Requirements [Lite Nodes]
 
