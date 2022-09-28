@@ -8,8 +8,6 @@ Official Documentation:
 Explorer:
 >-  https://explorer.inery.io/blocks/
 
->- To monitor and get alerted about your validator health status you can use my guide on [Set up monitoring and alerting for inery validator](https://github.com/nodesxploit/testnet/blob/main/inery/monitoring/README.md)
-
 
 ## Hardware Requirements [Lite Nodes]
 
