@@ -37,10 +37,8 @@ Note : Make sure you're ordering vps as specs needed for the requirement, otherw
 ### Option 1 (automatic)
 You can setup your inery fullnode in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
-wget -O inery.sh https://raw.githubusercontent.com/nodesxploit/testnet/main/inery/inery.sh && chmod +x inery.sh && ./inery.sh
+wget -O inery.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/Inery/inery.sh && chmod +x inery.sh && ./inery.sh
 ```
-### Option 2 (manual)
-You can follow [manual guide](https://github.com/nodesxploit/testnet/blob/main/inery/manual_install.md) if you better prefer setting up node manually
 
 ## Setup
 >- Register Inery Testnet Dashboard on https://testnet.inery.io/
