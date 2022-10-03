@@ -18,7 +18,7 @@ wget -O wormholes_install.sh https://raw.githubusercontent.com/meowment/testnet_
 ![image](https://raw.githubusercontent.com/meowment/.github/main/images/IMG_20221003_180357.jpg)
 
 ![image](https://raw.githubusercontent.com/meowment/.github/main/images/IMG_20221003_180424.jpg) 
-
+ - Done
 ## Useful Commands
 Check node log
 ```
