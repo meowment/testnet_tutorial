@@ -15,3 +15,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 ```
 
+## 3. Open Port
+```
+ufw allow 22/tcp && ufw allow 30303/tcp && ufw allow 8545
+```
