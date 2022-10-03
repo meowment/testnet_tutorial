@@ -11,9 +11,6 @@ sleep 2
 #Update packages
 sudo apt update && sudo apt upgrade -y
 
-#Install dependencies
-sudo apt install wget jq build-essential nano unzip -y
-
 #Install docker
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
