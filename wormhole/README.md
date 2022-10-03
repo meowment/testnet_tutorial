@@ -4,6 +4,8 @@
 
 # Node  setup for Wormhole Testnet
 
+### Note: Use screen first
+
 ## 1. Open Port
 ```
 ufw allow 22/tcp && ufw allow 30303/tcp && ufw allow 8545 && ufw enable
