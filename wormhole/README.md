@@ -1,5 +1,5 @@
 
-# Node  setup
+# Node  setup for Wormhole Testnet
 
 ## 1. Open Port
 ```
