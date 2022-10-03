@@ -6,6 +6,8 @@ echo " | | | | | |  __/ (_) \ V  V /| | | | | |  __/ | | | |_   ";
 echo " |_| |_| |_|\___|\___/ \_/\_/ |_| |_| |_|\___|_| |_|\__|  ";
 echo -e "\e[0m"
 
+sleep 2
+
 #check docker cmd
 which docker >/dev/null 2>&1
 if  [ $? -ne 0 ] ; then
