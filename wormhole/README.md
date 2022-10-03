@@ -23,7 +23,7 @@ curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method
 Check Account Balance
 The parameters in params are account and block height, replace the first parameter with the account you want to query
 ```
-curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0xE860DD0F14e7a52Fa3012BfA00f4793edCe87EBe","pending"],"id":1}' http://127.0.0.1:8545
+curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["<youraddress>","pending"],"id":1}' http://127.0.0.1:8545
 ```
 Checkout The version
 ```
