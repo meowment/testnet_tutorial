@@ -11,24 +11,25 @@ ufw allow 22/tcp && ufw allow 30303/tcp && ufw allow 8545 && ufw enable
 wget -O wormholes_install.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/wormhole/wormholes_install.sh && chmod +x wormholes_install.sh && ./wormholes_install.sh
 ```
 
-### View Node Connection Status
+### Useful Commands
+View Node Connection Status
 ```
 curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method":"net_peerCount","id":1}' http://127.0.0.1:8545
 ```
-### Checkout Blocks
+Checkout Blocks
 ```
 curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method":"eth_blockNumber","id":1}' http://127.0.0.1:8545
 ```
-### Check Account Balance
-# The parameters in params are account and block height, replace the first parameter with the account you want to query
+Check Account Balance
+The parameters in params are account and block height, replace the first parameter with the account you want to query
 ```
 curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0xE860DD0F14e7a52Fa3012BfA00f4793edCe87EBe","pending"],"id":1}' http://127.0.0.1:8545
 ```
-### Checkout The version
+Checkout The version
 ```
 curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"eth_version","id":64}' http://127.0.0.1:8545
 ```
-### Monitor Node
+Monitor Node
 If you want to monitor node operation in real time, you can use the monitoring script.
 ```
 #!/bin/bash
