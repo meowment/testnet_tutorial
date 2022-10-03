@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="100" height="auto" src="https://raw.githubusercontent.com/meowment/tes/main/20221003_175653.jpg?token=GHSAT0AAAAAABVY4L2KINRLOMB5GAVUSYBMYZ2YDPA">
+  <img height="100" height="auto" src="https://raw.githubusercontent.com/meowment/.github/main/images/20221003_175653.jpg">
 </p>
 
 # Node  setup for Wormhole Testnet
@@ -15,10 +15,9 @@ wget -O wormholes_install.sh https://raw.githubusercontent.com/meowment/testnet_
 ```
 ## 3. Become Miner
  - Go to https://www.limino.com/
- - 
-![image](https://raw.githubusercontent.com/meowment/tes/main/IMG_20221003_180357.jpg?token=GHSAT0AAAAAABVY4L2KSR4QC35TYVI2RHKGYZ2YKBA)
+![image](https://raw.githubusercontent.com/meowment/.github/main/images/IMG_20221003_180357.jpg)
 
-![image](https://raw.githubusercontent.com/meowment/tes/main/IMG_20221003_180424.jpg?token=GHSAT0AAAAAABVY4L2LFTG63TXLST7IH7ROYZ2YKIA) 
+![image](https://raw.githubusercontent.com/meowment/.github/main/images/IMG_20221003_180424.jpg) 
 
 ## Useful Commands
 Check node log
