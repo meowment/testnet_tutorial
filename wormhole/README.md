@@ -24,6 +24,10 @@ Check node log
 ```
 tail -f /wm/.wormholes/wormholes.log | grep -i '<your address>'
 ```
+Monitor node
+```
+wget -O monitor.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/wormhole/monitor.sh && chmod +x monitor.sh && ./monitor.sh
+```
 Stop node
 ```
 docker stop wormholes
