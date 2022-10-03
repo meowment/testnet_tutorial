@@ -11,7 +11,7 @@ ufw allow 22/tcp && ufw allow 30303/tcp && ufw allow 8545 && ufw enable
 wget -O wormholes_install.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/wormhole/wormholes_install.sh && chmod +x wormholes_install.sh && ./wormholes_install.sh
 ```
 
-### Useful Commands
+## Useful Commands
 View Node Connection Status
 ```
 curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method":"net_peerCount","id":1}' http://127.0.0.1:8545
