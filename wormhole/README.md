@@ -1,3 +1,6 @@
+<p align="center">
+  <img height="100" height="auto" src="https://raw.githubusercontent.com/meowment/tes/main/20221003_175653.jpg?token=GHSAT0AAAAAABVY4L2KINRLOMB5GAVUSYBMYZ2YDPA">
+</p>
 
 # Node  setup for Wormhole Testnet
 
