@@ -43,6 +43,6 @@ docker stop wormholes
 Uninstall node
 ```
 docker stop wormholes
-rm wormholes_install.sh
-rm -rf /wm/.wormholes
+sudo rm wormholes_install.sh
+sudo rm -rf /wm/.wormholes
 ```
