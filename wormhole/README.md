@@ -16,7 +16,7 @@ ufw allow 22/tcp && ufw allow 30303/tcp && ufw allow 8545 && ufw enable
 wget -O wormholes_install.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/wormhole/wormholes_install.sh && chmod +x wormholes_install.sh && ./wormholes_install.sh
 ```
 
-Check node log
+Check the node log
 ```
 tail -f /wm/.wormholes/wormholes.log | grep -i '<your address>'
 ```
