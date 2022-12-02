@@ -83,12 +83,6 @@ screen -S master
 ```
 Ini Aga Lama jadi buka tab session baru aja biar nodenyea ke pantau
 
-
-## kalo ini udah kelar langsung pake snapshot aja biar ga nunggu lama
-update inery yg mau baru install bisa menggunakan snapshot dengan ketinggian block #1078313
-
-Sebelumnya cek block dulu:
-
 a. Cek block sekarang
 
 ```
@@ -107,10 +101,6 @@ cd $HOME/inery-node/inery.setup/master.node/
 ./stop.sh
 pkill nodine
 ./clean.sh
-```
-2. Download dan extract snapshot
-```
-wget -O inery.tar.gz http://test-azero.jambulmerah.dev:80/inery.tar.gz && tar -xzvf inery.tar.gz
 ```
 
 3. Start again
