@@ -2,17 +2,6 @@
 
 # teritori node setup for testnet — teritori-testnet-v2
 
-Official documentation:
->- [Validator setup instructions](https://github.com/TERITORI/teritori-chain/blob/main/testnet/teritori-testnet-v2/README.md)
-
-Explorer:
->- https://teritori.explorers.guru/
-
-## Usefull tools and references
-> To set up monitoring for your validator node navigate to [Set up monitoring and alerting for teritori validator](https://github.com/kj89/testnet_manuals/blob/main/teritori/monitoring/README.md)
->
-> To migrate your validator to another machine read [Migrate your validator to another machine](https://github.com/kj89/testnet_manuals/blob/main/teritori/migrate_validator.md)
-
 ## Hardware Requirements
 Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
 
