@@ -82,7 +82,7 @@ screen -S master
 ./ine.py --master
 ```
 
-go to inery blockchain folder
+## Go to inery blockchain folder
 ```
 cd inery-node/inery.setup/master.node/blockchain
 ```
