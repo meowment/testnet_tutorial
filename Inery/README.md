@@ -90,17 +90,6 @@ cd inery-node/inery.setup/master.node/blockchain
 tail -f nodine.log
 ```
 
-a. Cek block sekarang
-
-```
-curl -sSL -X POST 'http://bis.blockchain-servers.world:8888/v1/chain/get_info' -H 'Accept: application/json' | jq -r '.head_block_num'
-```
-
-b. Cek block di nodesendiri
-``` 
-curl -sSL -X POST 'http://localhost:8888/v1/chain/get_info' -H 'Accept: application/json' | jq -r '.head_block_num'
-```
-
 1. Stop and clean data blockchain inery
 ```
 cd $HOME/inery-node/inery.setup/master.node/
@@ -186,12 +175,3 @@ Hapus Directory
 ```
 rm -rf master.node
 ```
-## 
-thanks to bang jambulmerah snapshotnya https://jambulmerah.dev/
-##
-thanks to nodeX capital https://nodex.codes/
-##
-thanks to bangpateng https://github.com/bangpateng/
-##
-thanks to dexa airdrop sultan https://github.com/nadi555
-
