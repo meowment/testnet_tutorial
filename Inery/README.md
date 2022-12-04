@@ -81,7 +81,14 @@ screen -S master
 ```
 ./ine.py --master
 ```
-Ini Aga Lama jadi buka tab session baru aja biar nodenyea ke pantau
+
+go to inery blockchain folder
+```
+cd inery-node/inery.setup/master.node/blockchain
+```
+```
+tail -f nodine.log
+```
 
 a. Cek block sekarang
 
@@ -93,7 +100,6 @@ b. Cek block di nodesendiri
 ``` 
 curl -sSL -X POST 'http://localhost:8888/v1/chain/get_info' -H 'Accept: application/json' | jq -r '.head_block_num'
 ```
-Jika block di node sendiri masih dari block snapshot yaitu #1078313 jauh bisa di lanjutkan:
 
 1. Stop and clean data blockchain inery
 ```
@@ -110,8 +116,8 @@ pkill nodine
 
 4. Cek log
 ```
-tail -f blockchain/nodine.log
- ```
+tail -f nodine.log
+```
 
 
 ##
