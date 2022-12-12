@@ -66,6 +66,7 @@ defundd config node tcp://localhost:${DEFUND_PORT}657
 defundd init $NODENAME --chain-id $DEFUND_CHAIN_ID
 
 # download genesis and addrbook
+wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/DeFund/addrbook.json"
 wget -O genesis.json https://snapshots.nodeist.net/t/defund/genesis.json --inet4-only
 mv genesis.json ~/.defund/config
 
