@@ -53,9 +53,6 @@ seeds="85279852bd306c385402185e0125dffeed36bf22@38.146.3.194:26656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.defund/config/config.toml
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.defund/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.defund/config/config.toml
-
-```
-```
 systemctl restart defundd && journalctl -u defundd -f -o cat
 ```
 
