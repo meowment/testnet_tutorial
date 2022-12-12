@@ -15,14 +15,11 @@ Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
  - Permanent Internet connection (traffic will be minimal during testnet; 10Mbps will be plenty - for production at least 100Mbps is expected)
 
 ## Set up your sei fullnode
-### Option 1 (automatic)
+
 You can setup your sei fullnode in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
 wget -O sei.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/sei/sei.sh && chmod +x sei.sh && ./sei.sh
 ```
-
-### Option 2 (manual)
-You can follow [manual guide](https://github.com/kj89/testnet_manuals/blob/main/sei/manual_install.md) if you better prefer setting up node manually
 
 ## Post installation
 
