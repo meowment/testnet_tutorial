@@ -89,30 +89,20 @@ sed -i 's/minimum-gas-prices =.*/minimum-gas-prices = "0.025unibi"/g' $HOME/.nib
 # enable prometheus
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.nibid/config/config.toml
 
-# reset
-nibid tendermint unsafe-reset-all --home $HOME/.nibid
+# statesync
+cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
 
-echo -e "\e[1m\e[32m4. Starting service... \e[0m" && sleep 1
-# create service
-sudo tee /etc/systemd/system/nibid.service > /dev/null <<EOF
-[Unit]
-Description=nibi
-After=network-online.target
-[Service]
-User=$USER
-ExecStart=$(which nibid) start --home $HOME/.nibid
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=65535
-[Install]
-WantedBy=multi-user.target
-EOF
+rm -rf ~/.nibid/data; \
+mkdir -p ~/.nibid/data; \
+cd ~/.nibid/data
+
+SNAP_NAME=$(curl -s https://snapshots.bccnodes.com/testnets/nibiru/ | egrep -o ">nibiru-testnet-2.*tar" | tail -n 1 | tr -d '>'); \
+wget -O - https://snapshots.bccnodes.com/testnets/nibiru/${SNAP_NAME} | tar xf -
+
+mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json
+
+
+wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/BccNodes/Snapshot-Statesync/main/Nibiru%20Testnet-2/addrbook.json"
 
 # start service
-sudo systemctl daemon-reload
-sudo systemctl enable nibid
-sudo systemctl restart nibid
-
-echo '=============== SETUP FINISHED ==================='
-echo -e 'To check logs: \e[1m\e[32mjournalctl -u nibid -f -o cat\e[0m'
-echo -e "To check sync status: \e[1m\e[32mcurl -s localhost:${NIBIRU_PORT}657/status | jq .result.sync_info\e[0m"
+nibid start
