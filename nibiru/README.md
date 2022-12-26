@@ -118,16 +118,6 @@ sudo ufw allow ${NIBIRU_PORT}656,${NIBIRU_PORT}660/tcp
 sudo ufw enable
 ```
 
-## Monitoring
-To monitor and get alerted about your validator health status you can use my guide on [Set up monitoring and alerting for nibi validator](https://github.com/kj89/testnet_manuals/blob/main/nibiru/monitoring/README.md)
-
-## Calculate synchronization time
-This script will help you to estimate how much time it will take to fully synchronize your node\
-It measures average blocks per minute that are being synchronized for period of 5 minutes and then gives you results
-```
-wget -O synctime.py https://raw.githubusercontent.com/kj89/testnet_manuals/main/nibiru/tools/synctime.py && python3 ./synctime.py
-```
-
 ### Check your validator key
 ```
 [[ $(nibid q staking validator $NIBIRU_VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(nibid status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
