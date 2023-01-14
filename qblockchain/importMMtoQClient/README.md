@@ -4,7 +4,7 @@ About: This tutorial explains how to import a Metamask Account into the Q Blockc
 
 **Note:** This guide is of educational purpose and assumes high level of technical understanding. You are touching private keys of your metamask so make sure to backup any funds to a secured separate wallet first.  
 
-## Step 1: Export Private Key From Metamask
+### Step 1: Export Private Key From Metamask
 
 You can export accounts which are generated from Metamask with the export function. 
 
@@ -12,11 +12,10 @@ You can export accounts which are generated from Metamask with the export functi
 
 Click the three dots, see the account details, export private key, enter metamask password, copy private key. 
 
-![Step1](./pics/01-stepExportMM.png "Step 1")
 
 **Note:** Make sure no has access to your private key - **risk of Loss of funds!!!**
 
-## Step 2: Start Q Validator Node without unlocking account and mining
+### Step 2: Start Q Validator Node without unlocking account and mining
 
 It is assumed you have docker and docker compose installed on your system. You can check versions with
 
@@ -106,8 +105,6 @@ make sure to use `" "` with key and password.
 
 The output should be your public wallet address starting with `0x`. Example: `"0xb*******************c"`. 
 Compare this with your metamask account public wallet address from Step 1 and they should be identical. 
-
-![Step3](./pics/02-importOutput.png "Step 3")
 
 Now, exit the geth console with `Ctr + d`
 
