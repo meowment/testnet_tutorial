@@ -108,9 +108,9 @@ Compare this with your metamask account public wallet address from Step 1 and th
 
 Now, exit the geth console with `Ctr + d`
 
-Check folder `keystore` was generated inside `testnet-validator` folder. Inside `testnet-validator` do `ls -l` and confirm it is there.
 
-Per default, the owner of the keystore folder will be root. To change ownership to your user account use
+
+change ownership to your user account use
 
 `$ sudo chown -R $USER:$USER ./keystore/`
 
@@ -124,7 +124,7 @@ And the directoy should contain a file starting with `UTC`, example: `UTC--2023-
 
 Note that the last part of keystore file is your wallet address without `0x`. 
 
-Create empty file `pwd.txt` 
+### Create empty file `pwd.txt` 
 
 `$ touch pwd.txt`
 
@@ -134,7 +134,7 @@ and edit with nano
 
 Insert your password, example `secure-password-123` wihtout any `" "`.
 
-Congratulations, you can now continue with the official setup guide and use public address from metamask as validator address.
+
 
 ## Step 4 Cleanup
 
