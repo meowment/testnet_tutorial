@@ -124,7 +124,7 @@ And the directoy should contain a file starting with `UTC`, example: `UTC--2023-
 
 Note that the last part of keystore file is your wallet address without `0x`. 
 
-### Create empty file `pwd.txt` 
+### Step 4 Create empty file `pwd.txt` 
 
 `$ touch pwd.txt`
 
@@ -136,7 +136,7 @@ Insert your password, example `secure-password-123` wihtout any `" "`.
 
 
 
-## Step 4 Cleanup
+## Step 5 Cleanup
 
 Go back inside the `testnet-validator` folder. Shutdown the client with 
 
