@@ -123,6 +123,56 @@ function check_logs {
     sudo journalctl -fu marsd -o cat
 }
 
+function create_wallet {
+    echo "Creating your wallet.."
+    sleep 2
+    
+    marsd keys add wallet
+    
+    sleep 3
+    echo "SAVE YOUR MNEMONIC!!!"
+
+
+}
+
+function state_sync {
+    echo "SOON"
+}
+
+function sync_snapshot {
+   echo " If you have state sync enabled please turn it off first"
+   sleep 3
+   sudo apt update
+   sudo apt install snapd -y
+   sudo snap install lz4
+   
+   sudo systemctl stop marsd
+	cp $HOME/.mars/data/priv_validator_state.json $HOME/.mars/priv_validator_state.json.backup
+	rm -rf $HOME/.mars/data
+
+	curl -L https://snapshot.mars.indonode.net/mars-snapshot-2023-01-14.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.mars
+	mv $HOME/.mars/priv_validator_state.json.backup $HOME/.mars/data/priv_validator_state.json
+
+	sudo systemctl restart marsd && journalctl -u marsd -f --no-hostname -o cat
+
+}
+
+function delete_node {
+echo "BACKUP YOUR NODE!!!"
+echo "Deleting node in 3 seconds"
+sleep 3
+cd $HOME
+sudo systemctl stop marsd
+sudo systemctl disable marsd
+sudo rm /etc/systemd/system/marsd.service
+sudo systemctl daemon-reload
+sudo rm -rf $(which marsd) 
+sudo rm -rf $HOME/.mars
+sudo rm -rf $HOME/hub
+echo "Node has been deleted from your machine :)"
+sleep 3
+}
+
 function select_option {
     # little helpers for terminal print control and key input
     ESC=$( printf "\033")
@@ -194,12 +244,16 @@ function main {
 
     print_logo
 
-    echo "Meowment Node Installer CLI"
+    echo "Indonode Node Installer CLI"
     echo "Choose the command you want to use:"
 
     options=(
         "🚀 Install Mars Testnet Node Port 20"
         "📝 Check Logs"
+        "🔑 Create wallet"
+        "🖧 Sync Via State-sync "
+        "🔎 Sync Via Snapshot"
+        "🗑️ Delete Node"
         "🎯 Exit"
     )
 
@@ -215,9 +269,18 @@ function main {
             check_logs
             ;;
         2)
-            delete_node
+            create_wallet
             ;;    
         3)
+            state_sync
+            ;;
+        4)
+            sync_snapshot
+            ;;
+        5)
+            delete_node
+            ;;    
+        6)
             exit 0
             ;;
     esac
