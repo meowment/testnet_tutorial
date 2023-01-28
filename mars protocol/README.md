@@ -1,9 +1,9 @@
 <p style="font-size:14px" align="right">
-<a href="https://github.com/meowment/testnet_tutorial" target="_blank">More Guide Tutorials<img src="https://avatars.githubusercontent.com/u/34649601?v=4" width="30"/></a>
+<a href="https://github.com/meowment/testnet_tutorial" target="_blank">More Guide Tutorials<img src="https://avatars.githubusercontent.com/u/65986100?s=40&v=4" width="30"/></a>
 </p>
 
 <p style="font-size:14px" align="right">
-<a href="https://meowment.xyz/" target="_blank">Visit my website <img src="https://avatars.githubusercontent.com/u/34649601?v=4" width="30"/></a>
+<a href="https://meowment.xyz/" target="_blank">Visit my website <img src="" width="30"/></a>
 </p>
 
 <p align="center">
@@ -13,9 +13,6 @@
 # Official Links
 ### [Official Document](https://validatordocs.marsprotocol.io/TfYZfjcaUzFmiAkWDf7P/infrastructure/validators)
 ### [Mars Official Discord](https://discord.gg/marsprotocol)
-
-# Explorer
-### [Explorer](https://explorer.indonode.dev/mars/staking)
 
 ## Minimum Requirements 
 - 4 or more physical CPU cores
