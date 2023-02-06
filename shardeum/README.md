@@ -1,4 +1,4 @@
-<h1 align="center">Shardeum Betanet Validator Kurulum Rehberi
+<h1 align="center">Shardeum Betanet Validator
 
 
 ![image](https://user-images.githubusercontent.com/101462877/216376207-8a54c853-8e4c-42bc-b2df-3622c0f2fcd9.png)
@@ -10,7 +10,7 @@ NODE TIPE | CPU     | RAM      | SSD     |
   
   
   
-# Untuk menambahkan jaringan Sphinx (Betanet) ke metamask:: https://docs.shardeum.org/network/endpoints
+# ADD RPC Sphinx (Betanet) to metamask:: https://docs.shardeum.org/network/endpoints
   
   <img width="1440" alt="Ekran Resmi 2023-02-02 19 47 45" src="https://user-images.githubusercontent.com/101462877/216388297-d9b47afc-c5e6-4245-9bd9-1171a05fa77d.png">
 
@@ -119,4 +119,3 @@ pm2 list
   
   ![image](https://user-images.githubusercontent.com/101462877/216434539-6bcf7343-fcb3-423a-a7ee-d1cb8f1dde68.png)
 
-# JANGAN LUPA NGOPI NYA !!!
