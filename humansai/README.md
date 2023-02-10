@@ -16,7 +16,7 @@
 
 ## Auto installation
 ```
-wget -O humans.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/humansai/humans.sh && chmod +x humans.sh && ./humans.sh
+wget -O hums https://raw.githubusercontent.com/meowment/testnet_tutorial/main/humansai/hums && chmod +x hums && ./hums
 ```
 
 ## Post installation
