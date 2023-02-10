@@ -192,11 +192,11 @@ humansd tx slashing unjail \
 This commands will completely remove node from server. Use at your own risk!
 
 ```
-sudo systemctl stop humansd 
-sudo systemctl disable humansd 
-sudo rm -rf /etc/systemd/system/humansd* 
+sudo systemctl stop humansd
+sudo systemctl disable humansd
+sudo rm -rf /etc/systemd/system/humansd*
 sudo systemctl daemon-reload
-sudo rm $(which humansd) 
-sudo rm -rf $HOME/.humansd 
-sudo rm -fr $HOME/humansd
+sudo rm $(which humansd)
+sudo rm -rf $HOME/.humans
+sudo rm -fr $HOME/humans
 ```
