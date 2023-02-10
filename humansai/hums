@@ -4,8 +4,12 @@ while true
 do
 
 # Logo
-
-curl -s https://raw.githubusercontent.com/meowment/meowment/main/Logo/homepage.png.jpg | bash
+echo -e "\e[92m"
+echo "  ___ ___    ___  __ __      __ ___ ___   ___ ___  | |_   ";
+echo " |  _ \ _ \ / _ \/ _ \ \ /\ / /  _ \ _ \ / _ \  _ \| __|  ";
+echo " | | | | | |  __/ (_) \ V  V /| | | | | |  __/ | | | |_   ";
+echo " |_| |_| |_|\___|\___/ \_/\_/ |_| |_| |_|\___|_| |_|\__|  ";
+echo -e "\e[0m"
 
 # Menu
 
