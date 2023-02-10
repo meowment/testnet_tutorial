@@ -16,7 +16,7 @@
 
 ## Auto installation
 ```
-wget -O hmns https://raw.githubusercontent.com/meowment/testnet_tutorial/main/humansai/hmns && chmod +x hmns && ./hmns
+wget -O hums https://raw.githubusercontent.com/meowment/testnet_tutorial/main/humansai/hums && chmod +x hums && ./hums
 ```
 
 ## Post installation
