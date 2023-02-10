@@ -1,14 +1,14 @@
 <p align="center">
-  <img height="200" height="auto" src="https://raw.githubusercontent.com/meowment/meowment/main/Logo/humans.jpg">
+  <img height="400" height="400" src="https://raw.githubusercontent.com/meowment/meowment/main/Logo/humans.jpg">
 </p>
 
 ## Useful Links
-- Website: humans.ai
-- Twitter: twitter.com/humansdotai
-- Resources: linktr.ee/humansdotai
-- Documentation: docs.humans.zone
+- Website: https://humans.ai
+- Twitter: https://twitter.com/humansdotai
+- Resources: https://linktr.ee/humansdotai
+- Documentation: https://docs.humans.zone
 
-- **Minimum hardware requirements**:
+## Minimum hardware requirements**:
 
 | Node Type |CPU | RAM  | Storage  | 
 |-----------|----|------|----------|
