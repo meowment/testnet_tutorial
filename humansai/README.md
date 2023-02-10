@@ -16,14 +16,14 @@
 
 ## Manual installation
 
-# Update packages and Install dependencies
+Update packages and Install dependencies
 
 ~~~bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc -y
 ~~~
 
-# Replace your moniker `<YOUR_MONIKER>` without `<>`, save and import variables into system
+Replace your moniker `<YOUR_MONIKER>` without `<>`, save and import variables into system
 
 ~~~bash
 HUMANS_PORT=17
@@ -34,7 +34,7 @@ echo "export HUMANS_PORT="${HUMANS_PORT}"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ~~~
 
-# install go
+install go
 
 ~~~bash
 cd $HOME
@@ -47,7 +47,7 @@ source $HOME/.bash_profile
 go version
 ~~~
 
-# Download and build binaries
+Download and build binaries
 
 ~~~bash
 cd $HOME
@@ -59,7 +59,7 @@ go build -o humansd cmd/humansd/main.go
 mv humansd ~/go/bin/humansd
 ~~~
 
-# Config and init app
+Config and init app
 
 ~~~bash
 humansd config node tcp://localhost:${HUMANS_PORT}657
@@ -68,13 +68,13 @@ humansd config keyring-backend test
 humansd init $HUMANS_MONIKER --chain-id $HUMANS_CHAIN_ID
 ~~~
 
-# Download genesis and addrbook
+Download genesis and addrbook
 
 ~~~bash
 curl -s https://rpc-testnet.humans.zone/genesis | jq -r .result.genesis > $HOME/.humans/config/genesis.json
 ~~~
 
-# Set seeds and peers
+Set seeds and peers
 
 ~~~bash
 SEEDS=""
@@ -82,7 +82,7 @@ PEERS="852eb15330eeeaf7c38d6ab300c9768f7ee12039@157.245.195.54:26656,1df6735ac39
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.humans/config/config.toml
 ~~~
 
-# Set gustom ports in app.toml file
+Set gustom ports in app.toml file
 
 ~~~bash
 sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${HUMANS_PORT}317\"%;
@@ -93,7 +93,7 @@ s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:${HUMANS_PORT}545\"%;
 s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:${HUMANS_PORT}546\"%" $HOME/.humans/config/app.toml
 ~~~
 
-Set gustom ports in config.toml file
+Set custom ports in config.toml file
 
 ~~~bash
 sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${HUMANS_PORT}658\"%; 
