@@ -244,7 +244,7 @@ function main {
 
     print_logo
 
-    echo "Indonode Node Installer CLI"
+    echo "Meowment Node Installer CLI"
     echo "Choose the command you want to use:"
 
     options=(
