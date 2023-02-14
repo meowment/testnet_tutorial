@@ -7,7 +7,7 @@ source ~/.bash_profile
 ### • Automatic Installation •
 You can setup your node in few minutes with this script below. Just follow the instructions.\
 ```
-wget -O atreides.sh https://raw.githubusercontent.com/dickydamaraa/Testnet/main/Alliance-Tera/auto.sh && chmod +x atreides.sh
+wget -O atreides.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/gameofalliance/testnet.sh && chmod +x atreides.sh
 ```
 
 ### Execute installation with chain
