@@ -51,7 +51,7 @@ Before creating validator please make sure that you have at least 1 heart (1 hea
 
 To check your wallet balance:
 ```
-humansd query bank balances core..address
+cored query bank balances core..address
 ```
 > If your wallet does not show any balance than probably your node is still syncing. Please wait until it finish to synchronize and then continue 
 
