@@ -231,12 +231,12 @@ journalctl -fu humansd -o cat
 
 Start service
 ```
-sudo systemctl humansd seid
+sudo systemctl start humansd
 ```
 
 Stop service
 ```
-sudo systemctl humansd seid
+sudo systemctl stop humansd
 ```
 
 Restart service
