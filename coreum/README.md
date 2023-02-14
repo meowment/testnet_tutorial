@@ -16,7 +16,7 @@
 
 ### Auto Installation
 ```
-wget -O core.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/coreum/core.sh && chmod +x core.sh && ./core.sh
+wget -O core https://raw.githubusercontent.com/meowment/testnet_tutorial/main/coreum/core && chmod +x core && ./core
 ```
 
 ## Post installation
