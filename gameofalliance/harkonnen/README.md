@@ -7,12 +7,12 @@ source ~/.bash_profile
 ### • Automatic Installation •
 You can setup your node in few minutes with this script below. Just follow the instructions.\
 ```
-wget -O harkonnen.sh https://raw.githubusercontent.com/dickydamaraa/Testnet/main/Alliance-Tera/auto.sh && chmod +x harkonnen.sh
+wget -O testnet.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/gameofalliance/testnet.sh && chmod +x testnet.sh
 ```
 
 ### Execute installation with chain
 ```
-./harkonnen.sh -c harkonnen-1
+./testnet.sh -c harkonnen-1
 ```
 ============================================================================================
 ### Copy binaries to bin
