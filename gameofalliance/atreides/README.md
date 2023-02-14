@@ -7,12 +7,12 @@ source ~/.bash_profile
 ### • Automatic Installation •
 You can setup your node in few minutes with this script below. Just follow the instructions.\
 ```
-wget -O atreides.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/gameofalliance/testnet.sh && chmod +x atreides.sh
+wget -O testnet.sh https://raw.githubusercontent.com/meowment/testnet_tutorial/main/gameofalliance/testnet.sh && chmod +x testnet.sh
 ```
 
 ### Execute installation with chain
 ```
-./atreides.sh -c atreides-1
+./testnet.sh -c atreides-1
 ```
 ============================================================================================
 ### Copy binaries to bin
