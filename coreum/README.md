@@ -38,7 +38,7 @@ cored keys add $WALLET --keyring-backend test
 
 (OPTIONAL) To recover your wallet using seed phrase
 ```
-humansd keys add $WALLET --recover
+cored keys add $WALLET --recover
 ```
 
 To get current list of wallets
