@@ -14,7 +14,7 @@
 |-----------|----|------|----------|
 | Testnet   |   4|  8GB | 150GB    |
 
-### Auto Installation
+## Auto Installation
 ```
 wget -O core https://raw.githubusercontent.com/meowment/testnet_tutorial/main/coreum/core && chmod +x core && ./core
 ```
