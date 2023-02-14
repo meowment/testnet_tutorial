@@ -47,7 +47,7 @@ cored keys list
 ```
 
 ### Create validator
-Before creating validator please make sure that you have at least 1 heart (1 heart is equal to 1000000 uheart) and your node is synchronized
+Before creating validator please make sure that you have at least 20000core (1 core is equal to 20000000000utestcore) and your node is synchronized
 
 To check your wallet balance:
 ```
