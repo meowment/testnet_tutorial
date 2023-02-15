@@ -135,7 +135,7 @@ function sync_snapshot {
    cp $HOME/.core/coreum-testnet-1/data/priv_validator_state.json $HOME/.core/coreum-testnet-1/priv_validator_state.json.backup
    rm -rf $HOME/.core/coreum-testnet-1/data
 
-   curl -L https://snap.coreum-testnet.meowment.xyz/core/core-snapshot-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.core/
+   curl -L https://snap.coreum-testnet.meowment.xyz/core/core-snapshot-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.core/coreum-testnet-1
    mv $HOME/.core/coreum-testnet-1/priv_validator_state.json.backup $HOME/.core/coreum-testnet-1/data/priv_validator_state.json
 
    sudo systemctl start cored && sudo journalctl -fu cored -o cat
