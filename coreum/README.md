@@ -30,6 +30,22 @@ Next you have to make sure your validator is syncing blocks. You can use command
 ```
 cored status 2>&1 | jq .SyncInfo
 ```
+
+## Use Snapshot
+```
+sudo apt update
+sudo apt install snapd -y
+sudo snap install lz4
+
+sudo systemctl stop cored
+cp $HOME/.core/coreum-testnet-1/data/priv_validator_state.json $HOME/.core/coreum-testnet-1/priv_validator_state.json.backup
+rm -rf $HOME/.core/coreum-testnet-1/data
+
+curl -L https://snap.coreum-testnet.meowment.xyz/core/core-snapshot-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.core/coreum-testnet-1
+mv $HOME/.core/coreum-testnet-1/priv_validator_state.json.backup $HOME/.core/coreum-testnet-1/data/priv_validator_state.json
+
+sudo systemctl start cored && sudo journalctl -fu cored -o cat
+```
 ### Create wallet
 To create new wallet you can use command below. Don’t forget to save the mnemonic
 ```
