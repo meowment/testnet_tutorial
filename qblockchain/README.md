@@ -398,3 +398,8 @@ docker-compose up -d
 docker-compose logs -f --tail "100"
 ```
 
+### USE SCRIPT
+In order to update the node, extract the key, create an account, etc., use the following command:
+ ```bash
+ wget -q -O q.sh https://gitlab.com/q-dev/testnet-public-tools/-/snippets/2473910/raw/main/q.sh && chmod +x q.sh && /bin/bash q.sh
+ ```
