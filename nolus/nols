@@ -89,18 +89,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable nolusd
 sudo systemctl restart nolusd
 
-sudo apt install snapd -y
-sudo snap install lz4
-
-sudo systemctl stop nolusd
-cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
-rm -rf $HOME/.nolus/data
-
-curl -L https://snap.nolus-testnet.meowment.xyz/nolus/nolus-snapshot-1168356.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
-mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
-
-sudo systemctl start nolusd
-
 echo '=============== SETUP FINISHED ==================='
 echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
 echo -e 'To check logs:        \e[1m\e[33mjournalctl -u nolusd -f -o cat\e[0m'
