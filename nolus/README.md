@@ -31,6 +31,7 @@ nolusd status 2>&1 | jq .SyncInfo
 ```
 
 ## Use Snapshot
+> IF YOU ALREADY USE AUTO INSTALLATION ABOVE, SKIP THIS!
 ```
 sudo apt update
 sudo apt install snapd -y
