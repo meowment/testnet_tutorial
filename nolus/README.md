@@ -41,7 +41,7 @@ sudo systemctl stop nolusd
 cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
 rm -rf $HOME/.nolus/data
 
-curl -L https://snap.nolus-testnet.meowment.xyz/nolus/nolus-snapshot-1168356.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
+curl -L https://snap.nolus-testnet.meowment.xyz/nolus/nolus-snapshot-28022023.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 
 sudo systemctl start nolusd && sudo journalctl -fu nolusd -o cat
