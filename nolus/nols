@@ -9,11 +9,11 @@ function install_node {
 echo "*********************"
 echo -e "\e[1m\e[35m		Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo -e "\e[1m\e[32m	Enter your MONIKER:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
-read Validator_Name
+read MONIKER
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export MONIKER=${MONIKER} >> $HOME/.bash_profile
 echo export CHAIN_ID="nolus-rila" >> $HOME/.bash_profile
 source ~/.bash_profile
 
@@ -34,33 +34,51 @@ source $HOME/.bash_profile && \
 go version
 
 echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
-#INSTALL
+# Clone project repository
 cd $HOME
-git clone https://github.com/Nolus-Protocol/nolus-core
+rm -rf nolus-core
+git clone https://github.com/Nolus-Protocol/nolus-core.git
 cd nolus-core
 git checkout v0.1.43
-make install
 
-nolusd init $Validator_Name --chain-id $CHAIN_ID
+# Build binaries
+make build
 
-wget -O $HOME/.nolus/config/genesis.json "https://raw.githubusercontent.com/Nolus-Protocol/nolus-networks/main/testnet/nolus-rila/genesis.json"
-wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/meowment/testnet_tutorial/main/nolus/addrbook.json"
+# Prepare binaries for Cosmovisor
+mkdir -p $HOME/.nolus/cosmovisor/genesis/bin
+mv target/release/nolusd $HOME/.nolus/cosmovisor/genesis/bin/
+rm -rf build
 
+# Create application symlinks
+ln -s $HOME/.nolus/cosmovisor/genesis $HOME/.nolus/cosmovisor/current
+sudo ln -s $HOME/.nolus/cosmovisor/current/bin/nolusd /usr/local/bin/nolusd
 
-echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
+# Set node configuration
+nolusd config chain-id nolus-rila
+nolusd config keyring-backend test
+nolusd config node tcp://localhost:43657
 
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0unls\"/" $HOME/.nolus/config/app.toml
-sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.nolus/config/config.toml
-external_address=$(wget -qO- eth0.me) 
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.nolus/config/config.toml
-peers=""
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nolus/config/config.toml
-seeds=""
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.nolus/config/config.toml
-sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.nolus/config/config.toml
-sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.nolus/config/config.toml
+# Initialize the node
+nolusd init $MONIKER --chain-id nolus-rila
 
+# Download genesis and addrbook
+curl -Ls https://snapshots.kjnodes.com/nolus-testnet/genesis.json > $HOME/.nolus/config/genesis.json
+curl -Ls https://snapshots.kjnodes.com/nolus-testnet/addrbook.json > $HOME/.nolus/config/addrbook.json
 
+# Add seeds
+sed -i -e "s|^seeds *=.*|seeds = \"\"|" $HOME/.nolus/config/config.toml
+
+# Set minimum gas price
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0025unls\"|" $HOME/.nolus/config/app.toml
+
+# Set pruning
+sed -i \
+  -e 's|^pruning *=.*|pruning = "nothing"|' \
+  $HOME/.nolus/config/app.toml
+
+# Set custom ports
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:43658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:43657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:43060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:43656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":43660\"%" $HOME/.nolus/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:43317\"%; s%^address = \":8080\"%address = \":43080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:43090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:43091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:43545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:43546\"%" $HOME/.nolus/config/app.toml
 
 
 # pruning and indexer
@@ -68,27 +86,38 @@ sed -i -e "s/^pruning *=.*/pruning = \"nothing\"/" $HOME/.nolus/config/app.toml
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.nolus/config/config.toml
 
+# Download and install Cosmovisor
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
-tee /etc/systemd/system/nolusd.service > /dev/null <<EOF
+# Create service
+sudo tee /etc/systemd/system/nolusd.service > /dev/null << EOF
 [Unit]
-Description=nolusd
+Description=nolus-testnet node service
 After=network-online.target
+
 [Service]
 User=$USER
-ExecStart=$(which nolusd) start
+ExecStart=$(which cosmovisor) run start
 Restart=on-failure
-RestartSec=3
+RestartSec=10
 LimitNOFILE=65535
+Environment="DAEMON_HOME=$HOME/.nolus"
+Environment="DAEMON_NAME=nolusd"
+Environment="UNSAFE_SKIP_BACKUP=true"
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.nolus/cosmovisor/current/bin"
+
 [Install]
 WantedBy=multi-user.target
 EOF
-
+sudo systemctl daemon-reload
+sudo systemctl enable nolusd
 
 # start service
 sudo systemctl daemon-reload
 sudo systemctl enable nolusd
 sudo systemctl restart nolusd
 
+sudo systemctl start nolusd
 
 echo '=============== SETUP FINISHED ==================='
 echo -e 'Congratulations:        \e[1m\e[32mSUCCESSFUL NODE INSTALLATION\e[0m'
