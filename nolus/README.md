@@ -44,7 +44,7 @@ rm -rf $HOME/.nolus/data
 curl -L https://snap.nolus-testnet.meowment.xyz/nolus/nolus-snapshot-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 
-sudo systemctl start nolusd && sudo journalctl -fu nolusd -o cat
+sudo systemctl restart nolusd && sudo journalctl -fu nolusd -o cat
 ```
 ### Create wallet
 To create new wallet you can use command below. Don’t forget to save the mnemonic
