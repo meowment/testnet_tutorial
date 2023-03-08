@@ -44,7 +44,7 @@ make install
 nolusd init $Validator_Name --chain-id $CHAIN_ID
 
 wget -O $HOME/.nolus/config/genesis.json "https://raw.githubusercontent.com/Nolus-Protocol/nolus-networks/main/testnet/nolus-rila/genesis.json"
-wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nolus/addrbook.json"
+wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/meowment/testnet_tutorial/main/nolus/addrbook.json"
 
 
 echo -e "                     \e[1m\e[32m4. Node optimization and improvement--> \e[0m" && sleep 1
