@@ -6,15 +6,14 @@ YELLOW="\e[33m"
 DEFAULT="\e[39m"
 
 function install_node {
-"Install Node")
 echo "*********************"
 echo -e "\e[1m\e[35m		Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo -e "\e[1m\e[32m	Enter your MONIKER:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
-read Validator_Name
+read MONIKER
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export MONIKER=${MONIKER} >> $HOME/.bash_profile
 echo export CHAIN_ID="nolus-rila" >> $HOME/.bash_profile
 source ~/.bash_profile
 
