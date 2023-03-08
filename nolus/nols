@@ -9,11 +9,11 @@ function install_node {
 echo "*********************"
 echo -e "\e[1m\e[35m		Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32m	Enter your MONIKER:\e[0m"
+echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
-read MONIKER
+read Validator_Name
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo export MONIKER=${MONIKER} >> $HOME/.bash_profile
+echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
 echo export CHAIN_ID="nolus-rila" >> $HOME/.bash_profile
 source ~/.bash_profile
 
@@ -73,14 +73,12 @@ tee /etc/systemd/system/nolusd.service > /dev/null <<EOF
 [Unit]
 Description=nolusd
 After=network-online.target
-
 [Service]
 User=$USER
 ExecStart=$(which nolusd) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
-
 [Install]
 WantedBy=multi-user.target
 EOF
