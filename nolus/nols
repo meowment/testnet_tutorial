@@ -9,11 +9,11 @@ function install_node {
 echo "*********************"
 echo -e "\e[1m\e[35m		Lets's begin\e[0m"
 echo "*********************"
-echo -e "\e[1m\e[32m	Enter your Validator_Name:\e[0m"
+echo -e "\e[1m\e[32m	Enter your MONIKER:\e[0m"
 echo "_|-_|-_|-_|-_|-_|-_|"
-read Validator_Name
+read MONIKER
 echo "_|-_|-_|-_|-_|-_|-_|"
-echo export Validator_Name=${Validator_Name} >> $HOME/.bash_profile
+echo export MONIKER=${MONIKER} >> $HOME/.bash_profile
 echo export CHAIN_ID="nolus-rila" >> $HOME/.bash_profile
 source ~/.bash_profile
 
@@ -38,10 +38,10 @@ echo -e "              \e[1m\e[32m3. Downloading and building binaries--> \e[0m"
 cd $HOME
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
-git checkout v0.1.43
+git checkout v0.2.1-testnet
 make install
 
-nolusd init $Validator_Name --chain-id $CHAIN_ID
+nolusd init $MONIKER --chain-id $CHAIN_ID
 
 wget -O $HOME/.nolus/config/genesis.json "https://raw.githubusercontent.com/Nolus-Protocol/nolus-networks/main/testnet/nolus-rila/genesis.json"
 wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/meowment/testnet_tutorial/main/nolus/addrbook.json"
@@ -128,8 +128,6 @@ sudo systemctl stop nolusd
 cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
 rm -rf $HOME/.nolus/data
 
-# download wasm if necessary
-curl -L https://snap.nolus-testnet.meowment.xyz/nolus/wasm-nolus.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nolus --strip-components 2
 # download snapshot (data)
 curl -L https://snap.nolus-testnet.meowment.xyz/nolus/nolus-snapshot-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
