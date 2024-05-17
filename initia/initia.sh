@@ -87,12 +87,14 @@ EOF
 
 # reset and download snapshot
 initiad tendermint unsafe-reset-all --home $HOME/.initia
-curl -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_150902.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
+curl -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_170136.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
 
 # enable and start service
 sudo systemctl enable initiad
 sudo systemctl daemon-reload
 sudo systemctl restart initiad
+
+echo 'export PATH=$PATH:$(go env GOPATH)/bin' >> ~/.bashrc && source ~/.bashrc
 
 echo "Initia setup completed successfully."
 sudo journalctl -u initiad -f
