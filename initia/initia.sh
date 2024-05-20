@@ -52,7 +52,7 @@ fi
 cd $HOME
 git clone https://github.com/initia-labs/initia
 cd initia
-git checkout v0.2.14
+git checkout v0.2.15
 make install
 initiad version --long
 
@@ -87,7 +87,7 @@ EOF
 
 # reset and download snapshot
 initiad tendermint unsafe-reset-all --home $HOME/.initia
-curl -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_202803.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
+curl -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_211947.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
 
 # enable and start service
 sudo systemctl enable initiad
