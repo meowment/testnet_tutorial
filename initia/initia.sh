@@ -87,7 +87,7 @@ EOF
 
 # reset and download snapshot
 initiad tendermint unsafe-reset-all --home $HOME/.initia
-curl -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_218063.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
+curl -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_237655.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
 
 # enable and start service
 sudo systemctl enable initiad
